@@ -1,0 +1,18 @@
+禁止开机启动:
+sudo update-rc.d -f apache2 remove 
+sudo update-rc.d -f apache-htcacheclean remove 
+sudo systemctl disable apache2.service
+
+恢复开机启动:
+sudo update-rc.d apache2 defaults
+sudo update-rc.d apache-htcacheclean defaults
+sudo systemctl enable apache2.service
+
+启动：
+sudo apachectl start
+
+停止：
+sudo apachectl stop
+
+重新启动：
+sudo apachectl restart
